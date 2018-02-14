@@ -33,5 +33,17 @@ router.post('/register', (req, res) => {
     }
 });
 
+router.get('/', (req, res) => {
+    User.find({}, (err, users) => {
+        if(err){
+            console.log(err)
+            res.json(err);
+        }
+        else{
+            res.status(200);
+            res.json(users);
+        }
+    });
+});
 
 module.exports = router;

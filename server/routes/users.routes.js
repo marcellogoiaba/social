@@ -46,4 +46,40 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:id', (req, res) => {
+    User.findById(req.params.id, (err, user) => {
+        if(err){
+            res.status(404);
+            res.send({message: 'User not found!'});
+        }
+        else{
+            console.log(req.body);
+            res.json({content: user});
+        }
+    });
+});
+
+router.put('/:id', (req, res) => {
+    User.findById(req.params.id, (err, user) => {
+        if(err){
+            res.status(404);
+            res.send({message: 'User not found'});
+        }
+        else{
+            console.log(req.body);
+            user.set(req.body);
+
+            user.save((err, user) => {
+                if(err){
+                    res.status(409);
+                    res.send({message: err});
+                }
+                console.log(user);
+                res.status(201);
+                res.json({content: user});
+            });
+        }
+    });
+});
+
 module.exports = router;

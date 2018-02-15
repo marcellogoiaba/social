@@ -2,23 +2,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { PublicComponent } from './public/public.component';
-import { PrivateComponent } from './private/private.component';
+import { AppRoutingModule } from './app.router';
+import { PublicModule } from './public/public.module';
+import { PrivateModule } from './private/private.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PublicComponent,
-    PrivateComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule,
+    PublicModule,
+    PrivateModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

@@ -35,13 +35,52 @@
         <div class="row">
           <div class="col-sm-10 offset-sm-1">
             <div class="register-body left">
-              <form action="">
-                <input type="text" class="form-control" placeholder="First Name">
-                <input type="text" class="form-control" placeholder="Last Name">
-                <input type="text" class="form-control" placeholder="Userame">
-                <input type="email" class="form-control" placeholder="email">
-                <input type="password" class="form-control" placeholder="Password">
-                <button class="btn btn-info col-sm-12">Sign me up!</button>
+              <form #signupForm="ngForm" (ngSubmit)="onSignUpClick(signupForm.form)">
+                <input type="text" 
+                       name="first_name" 
+                       class="form-control" 
+                       placeholder="First Name"
+                       pattern=".*\S+.*"
+                       required="required"
+                       [(ngModel)]="newUser.first_name"
+                       #first_name="ngModel"
+                       [class.ng-submitted]="_formSubmitted">
+                <input type="text"
+                       name="last_name" 
+                       class="form-control" 
+                       placeholder="Last Name"
+                       pattern=".*\S+.*"
+                       required="required"
+                       [(ngModel)]="newUser.last_name"
+                       #last_name="ngModel"
+                       [class.ng-submitted]="_formSubmitted">
+                <input type="text" 
+                       name="username"
+                       class="form-control" 
+                       placeholder="Userame"
+                       required="required"
+                       [(ngModel)]="newUser.username"
+                       #username="ngModel"
+                       [class.ng-submitted]="_formSubmitted">
+                <input type="email" 
+                       name="email"
+                       class="form-control" 
+                       placeholder="Email"
+                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                       required="required"
+                       [(ngModel)]="newUser.email"
+                       #email="ngModel"
+                       [class.ng-submitted]="formSubmitted">
+                <input type="password" 
+                       name="password"
+                       class="form-control" 
+                       placeholder="Password"
+                       required="required"
+                       reverse="true"
+                       [(ngModel)]="newUser.password"
+                       #password="ngModel"
+                       [class.ng-submitted]="_formSubmitted">
+                <button type="submit" class="btn btn-info col-sm-12">Sign me up!</button>
               </form>
             </div>
           </div>

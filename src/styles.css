@@ -1,2 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+@font-face{
+    font-family: "Raleway";
+    src: url("./assets/fonts/raleway/Raleway-Regular.ttf");
+}
+
+body{
+    font-family: Raleway !important;
+    padding: 0;
+    margin: 0;
+}

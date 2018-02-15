@@ -1,0 +1,46 @@
+.page-content{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image:url(../../assets/images/background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.form-content{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(53, 52, 52);
+    width: 80%;
+}
+.form-content h1{
+    text-align: center;
+    margin-bottom: 30px
+}
+.register-header{
+    color: rgba(255, 255, 255, 0.705);
+    padding: 15px 25px;
+    background: rgba(0, 0, 0, 0.397);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    width: 400px;
+}
+.register-body{
+    color: rgba(255, 255, 255, 0.705);
+    padding: 15px 25px;
+    background: rgba(0, 0, 0, 0.267);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    width: 400px;
+}
+.register-body input{
+    margin-bottom: 10px
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+

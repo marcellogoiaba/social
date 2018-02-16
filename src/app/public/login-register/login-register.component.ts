@@ -1,5 +1,7 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsersService } from '../../services/users.service';
+import { User } from '../../models/users.model';
 
 import { UsersService } from '../../services/users.service';
 import { User } from '../../models/user.model';

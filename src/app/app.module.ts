@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.router';
 import { PublicModule } from './public/public.module';
 import { PrivateModule } from './private/private.module';
+import { UsersService } from './services/users.service';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { PrivateModule } from './private/private.module';
     PublicModule,
     PrivateModule
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
